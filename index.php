@@ -86,7 +86,7 @@
                     <a class="nav-link" href="MastersPage.html">MastersPage</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="view2.php">StudentsPage</a>
+                    <a class="nav-link" href="StudentsView.php">StudentsPage</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="OfferdCourses.html">OfferdCourses</a>

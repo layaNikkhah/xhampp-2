@@ -43,7 +43,7 @@
 
         <?php
         include("sqlConnection.php");
-        $result  = query("SELECT * FROM student");
+        $columns  = query("SELECT * FROM student");
         ?>
 
         <div class="container mt-5">
@@ -54,6 +54,7 @@
                 <div class="col-1 col-lg-2"> <button class="btn btn-sm btn-warning">MastersPage </button></div>
             </div>
 
+            <!-- CreateTable -->
             <div class="row">
                 <table class="table table-bordered table-dark table-responsive-md">
                     <thead class="thead-light text-warning">
@@ -64,26 +65,21 @@
                             <th>FieldID</th>
                             <th>passedUnit</th>
                             <th>Grade</th>
+                            <th>EditInfo</th>
                         </tr>
                     </thead>
-
-                    <!-- <div class="bg-primary" style="height: 300px;width:800px"> -->
-                    <!-- </?php if ($value['major'] == 'computer')-->
-                    <!-- foreach($value['major'] as $major){  -->
                     <?php
 
-                    foreach ($result as $key => $value) {
-
+                    foreach ($columns as $key => $value) {
                         if ($value['major'] == 'computer') {
-                            // for($i=0;$i<3;$i++){
                     ?>
-
-
                     <tbody>
                         <tr class="">
-                            <?php foreach ($value as $in => $ls) { ?>
-                            <td class=""><?php echo $ls ?></td>
+                            <?php foreach ($value as $field => $fieldValue) { ?>
+                            <td class="align-self-start"><?php echo $fieldValue ?></td>
                             <?php } ?>
+                            <td class="d-flex justify-content-center"><button
+                                    class="btn btn-sm btn-warning">Edit</button></td>
                         </tr>
                     </tbody>
 
