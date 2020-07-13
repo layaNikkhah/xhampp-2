@@ -15,27 +15,10 @@
     }
     </style>
 </head>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-    <div class="container-floid">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="main.html">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="MastersPage.html">MastersPage</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="StudentsPage.php">StudentsPage</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="OfferdCourses.html">OfferdCourses</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="SelectUnit.html">SelectUnit</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+
+
+
+<?php include("navbar.php"); ?>
 
 <body class="bg-secondary text-warning" style="font-family: sans-serif;">
     <div class="container-fluid d-flex justify-content-center  mt-5">
@@ -44,11 +27,14 @@
         <?php
         $columns =  include("includeSQL.php");
         ?>
-
+        <?php
+        $ar = array("computer", "Mechanic", "Electerical");
+        for ($i = 0; $i < 3; $i++) {
+        ?>
         <div class="container mt-5">
             <div class="row mt-5  justify-content-between">
                 <div class="col-4 col-lg-6  h4 text-dark">
-                    Computer Students Table
+                    <?php echo $ar[$i] ?> Students Table
                 </div>
                 <div class="col-1 col-lg-2"> <button class="btn btn-sm btn-warning">MastersPage </button></div>
             </div>
@@ -69,35 +55,43 @@
                     </thead>
                     <?php
 
-                    foreach ($columns as $key => $value) {
-                        if ($value['major'] == 'computer') {
-                    ?>
+                        foreach ($columns as $key => $value) {
+                            // echo ($ar[$i]);
+                            if ($value['major'] == $ar[$i]) {
+                        ?>
+
+
                     <tbody>
-                        <tr class="">
+                        <tr>
                             <?php foreach ($value as $field => $fieldValue) { ?>
+
                             <td class="align-self-start"><?php echo $fieldValue ?></td>
                             <?php } ?>
-                            <td class="d-flex justify-content-center"><button
-                                    class="btn btn-sm btn-warning">Edit</button></td>
+                            <td class="d-flex justify-content-center"><button class="btn btn-sm btn-warning"
+                                    onclick="openEdit()">Edit</button></td>
                         </tr>
                     </tbody>
 
             </div>
             <?php
+                            }
                         }
-                    }
-    ?>
+        ?>
 
             </table>
         </div>
-
+        <?php
+        }
+        ?>
 
 
     </div>
 
-
-
-
+    <script>
+    function openEdit() {
+        console.dir(document);
+    }
+    </script>
 </body>
 
 </html>
