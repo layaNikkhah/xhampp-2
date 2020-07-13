@@ -42,8 +42,7 @@
 
 
         <?php
-        include("sqlConnection.php");
-        $columns  = query("SELECT * FROM student");
+        $columns =  include("includeSQL.php");
         ?>
 
         <div class="container mt-5">
