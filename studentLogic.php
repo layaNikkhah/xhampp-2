@@ -26,44 +26,7 @@ class Student {
   // Methods
   
   //if one condition is not aaceptable are we can distruct this object ?
-  function set_studentId($studentId) {
-    $this->studentId = $studentId;
-  }
-  function get_studentId() {
-    return $this->studentId;
-  } 
-  function set_name($name) {
-    $this->name = $name;
-  }
-  function get_name() {
-    return $this->name;
-  }
-  function set_lastName($lastName) {
-    $this->lastName = $lastName;
-  }
-  function get_lastName() {
-    return $this->lastName;
-  }
-  function set_fieldId($fieldId) {
-      
-        $this->fieldId = $fieldId;
-  }
-  function get_fieldId() {
-    return $this->fieldId;
-  }
-  function set_passedUnit($passedUnit) {
-    $this->passedUnit = $passedUnit;
-  }
-  function get_passedUnit() {
-    return $this->passedUnit;
-  }
-  function set_grade($grade) {
-        $this->grade = $grade;
-  }
-  function get_grade() {
-    return $this->grade;
-   }
-   
+  
    function insert_student(){
        global $conn;
        $sql =" INSERT INTO Student (name, lastName, studentID ,fieldId ,passedUnit ,grade)
