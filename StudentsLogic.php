@@ -14,6 +14,7 @@ foreach ($result as $key => $value) {
 <!-- colomns -->
 <?php
         foreach ($value as $in => $ls) {
+            echo "imlaya";
         ?>
 <div class="col-md-2 bg-secondary flex-fill h-100"
     style="border-right: white solid 1px;border-bottom: white solid 1px;">
